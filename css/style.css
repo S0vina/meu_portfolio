@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-image: linear-gradient(to bottom, black, rgb(7, 7, 7), #01001c);
   color: beige;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0; /* Remove espaços indesejados nas bordas */
@@ -8,7 +8,8 @@ body {
 }
 
 header {
-  background-color: red; /* Um azul escuro elegante */
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(19, 17, 17));
+  background-color: rgb(0, 0, 0); /* Um azul escuro elegante */
   color: white; /* Texto branco para contrastar */
   padding: 2rem;
   text-align: center; /* Centraliza o texto */
@@ -27,4 +28,54 @@ footer {
   text-align: center;
   font-family: Georgia, "Times New Roman", Times, serif;
   border-radius: 10px;
+}
+
+.foto-perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.main {
+  text-align: center;
+}
+
+.container-projetos {
+  display: flex;
+  flex-wrap: wrap; /* Se não couber na linha, pula para a de baixo */
+  gap: 20px; /* Espaço entre os cards */
+  justify-content: center; /* Centraliza os cards */
+  padding: 20px 0;
+}
+
+.card {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/images/back_azul.jpeg"); /* Caminho da imagem */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  background-size: cover; /* Cobre toda a área */
+  background-position: center; /* Centraliza a imagem */
+  background-attachment: fixed; /* Imagem fixa ao rolar */
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  width: 300px; /* Largura fixa para os cards */
+  text-align: left;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #fcfcfc;
+}
+
+.card a {
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.card p {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: bold;
 }
