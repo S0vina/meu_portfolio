@@ -1,5 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-image: linear-gradient(to bottom, black, rgb(7, 7, 7), #01001c);
+  background-image: linear-gradient(to bottom, black, rgb(7, 7, 7), #020126);
   color: beige;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0; /* Remove espaços indesejados nas bordas */
@@ -7,27 +11,153 @@ body {
   line-height: 1.6; /* Melhora o espaçamento entre as linhas de texto */
 }
 
+.navbar {
+  position: fixed;
+  top: 20px; /* Distância do topo da tela */
+  left: 50%; /* Move para o meio */
+  transform: translateX(-50%); /* Centraliza perfeitamente */
+
+  width: 90%; /* Ocupa 90% da largura da tela */
+  max-width: 1200px; /* Não deixa ficar gigante em monitores muito largos */
+  height: 65px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  /* Efeito Visual */
+  background-color: rgba(255, 255, 255, 0.05); /* Fundo bem sutil */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borda bem fina e clara */
+  border-radius: 20px; /* Bordas arredondadas para o efeito flutuante */
+
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.nav-elementos {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  /* Remova o margin-top se ele ainda estiver lá */
+}
+
+.nav-links {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.foto-logo {
+  margin-top: 10px;
+  height: 40px;
+  width: 40x;
+  border-radius: 50%;
+}
+
+.nav-links a {
+  color: #f0f0f0;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #3498db; /* O link fica azul ao passar o mouse */
+}
+
+.logo {
+  color: #3498db;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 header {
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(19, 17, 17));
+  min-height: 100vh;
+
+  opacity: 1;
+
+  align-items: center;
+  justify-content: center;
+
+  background-image: linear-gradient(
+    rgb(10, 10, 10),
+    rgb(33, 44, 139),
+    rgb(10, 10, 10)
+  );
   background-color: rgb(0, 0, 0); /* Um azul escuro elegante */
-  color: white; /* Texto branco para contrastar */
-  padding: 2rem;
-  text-align: center; /* Centraliza o texto */
+
   border-radius: 8px; /* Arredonda as bordas */
+
+  padding: 2rem;
+  color: white; /* Texto branco para contrastar */
+  text-align: center; /* Centraliza o texto */
+
+  position: relative;
+
+  padding-top: 100px; /* Isso cria um espaço reservado para a navbar */
+  box-sizing: border-box; /* Garante que o padding não aumente o tamanho total do header */
+}
+
+.scroll-arrow {
+  position: absolute;
+  bottom: 80px; /*fica a 50 pixels do final da tela*/
+  left: 50%; /*O centro fica em 50% (metade)*/
+  transform: translate(-50%); /**/
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.scroll-arrow span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 3px solid #3498db;
+  border-right: 3px solid #3498db;
+  transform: rotate(45deg);
+  animation: scroll-animation 2s infinite;
+  margin: -10px;
+}
+
+.scroll-arrow span:nth-child(2) {
+  animation-delay: -0.2;
+}
+
+.scroll-arrow span:nth-child(3) {
+  animation-delay: -0.7;
+}
+
+@keyframes scroll-animation {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+}
+
+section {
+  padding: 60px 20px; /* Espaço em cima/baixo e nas laterais */
+  max-width: 1000px; /* Limita a largura para não ficar esticado em telas gigantes */
+  margin: 0 auto; /* Centraliza as seções */
 }
 
 h1 {
   margin: 0;
   font-size: 2.5rem;
-}
-
-footer {
-  background-color: white;
-  color: black;
-  margin-top: 40px;
-  text-align: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  border-radius: 10px;
 }
 
 .foto-perfil {
@@ -38,6 +168,55 @@ footer {
 
 .main {
   text-align: center;
+}
+
+#habilidades {
+  text-align: center;
+}
+
+.lista-habilidades {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border: 2px solid #3498db;
+  padding: 15px 10px;
+  border-radius: 50px; /* Mantém o formato oval/pílula */
+
+  display: flex;
+  flex-direction: column; /* Empilha ícone e texto */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: space-between; /* Empurra o texto para a extremidade oposta do ícone */
+
+  width: 80px; /* Largura fixa para ficarem iguais */
+  height: 110px; /* Altura fixa para todos os cards */
+  transition: all 0.3s ease;
+}
+
+.skill-card img {
+  height: 50;
+  width: 50;
+  margin-top: 9px;
+}
+
+.skill-card span {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 0.8rem;
+  margin-bottom: 5px; /* Espaço no fundo para o texto não colar na borda */
+}
+
+/* Efeito de destaque quando passa o mouse */
+.skill-card:hover {
+  background-color: #3498db;
+  color: white;
+  transform: translateY(-5px); /* Faz a habilidade "pular" levemente */
+  box-shadow: 0 5px 15px rgba(235, 5, 5, 0.3);
 }
 
 .container-projetos {
@@ -69,6 +248,7 @@ footer {
 }
 
 .card a {
+  top: 50px;
   text-decoration: none;
   color: #3498db;
   font-weight: bold;
@@ -78,4 +258,58 @@ footer {
   text-decoration: none;
   color: #f0f0f0;
   font-weight: bold;
+}
+
+footer {
+  color: black;
+  margin-top: 40px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-radius: 10px;
+}
+
+footer p {
+  color: #f0f0f0;
+}
+
+.link-email {
+  color: #ffffff; /* Uma cor que combine com seu site */
+  text-decoration: none; /* Remove o sublinhado */
+  font-weight: bold;
+  transition: color 0.3s; /* Deixa a mudança de cor suave */
+}
+
+.link-email:hover {
+  color: #3c7fc7;
+  text-decoration: underline;
+}
+
+.container-contact {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.contato-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Tamanho da "bolinha" ou área do clique */
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: 0.3s;
+  border: 1px solid #3498db;
+}
+
+/* AQUI ESTÁ A SOLUÇÃO PARA O ÍCONE GRANDE */
+.contato-link img {
+  width: 30px; /* Define o tamanho real do ícone SVG */
+  height: 30px;
+  object-fit: contain; /* Garante que o ícone não estique */
+}
+.contato-link:hover {
+  background-color: #3498db;
+  transform: translateY(-5px);
 }

@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <nav class="navbar">
+      <div class="nav-elementos">
+        <span class="logo"
+          ><img
+            src="assets/images/perfil1.jpg"
+            alt="foto-logo"
+            class="foto-logo"
+        /></span>
+        <span class="nav-links"><a href="#">Início</a></span>
+        <span class="nav-links"><a href="#habilidades">Habilidades</a></span>
+        <span class="nav-links"><a href="#projetos">Projetos</a></span>
+        <span class="nav-links"><a href="#contato">Contato</a></span>
+      </div>
+    </nav>
+
     <header>
       <img
         src="assets/images/perfil3.jpg"
@@ -14,16 +29,78 @@
         class="foto-perfil"
       />
       <h1>Olá, eu sou Hillan Alves</h1>
-      <p>Desenvolvedor em formação</p>
+      <p>Desenvolvedor em formação na Universidade Federal do Piaui</p>
+
+      <div class="scroll-arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
 
     <main class="main">
+      <section id="habilidades">
+        <h2>Minhas habilidades</h2>
+
+        <div class="lista-habilidades">
+          <span class="skill-card"
+            ><img
+              src="assets/icons/python.svg"
+              alt="Foto-python"
+              class="icon-image"
+            />Python</span
+          >
+          <span class="skill-card"
+            ><img
+              src="assets/icons/cplusplus.svg"
+              alt="foto-C++"
+              class="icon-image"
+            />C++</span
+          >
+          <span class="skill-card"
+            ><img
+              src="assets/icons/cplusplus.svg"
+              alt="foto-C++"
+              class="icon-image"
+            />Java</span
+          >
+          <span class="skill-card"
+            ><img
+              src="assets/icons/git.svg"
+              alt="foto-git"
+              class="icon-image"
+            />Git</span
+          >
+          <span class="skill-card"
+            ><img
+              src="assets/icons/github.svg"
+              alt="foto-github"
+              class="icon-image"
+            />GitHub</span
+          >
+          <span class="skill-card"
+            ><img
+              src="assets/icons/html5.svg"
+              alt="foto-html5"
+              class="icon-image"
+            />HTML5</span
+          >
+          <span class="skill-card"
+            ><img
+              src="assets/icons/css.svg"
+              alt="foto-css"
+              class="icon-image"
+            />CSS3</span
+          >
+        </div>
+      </section>
+
       <section id="projetos">
-        <h2>MEUS PROJETOS</h2>
+        <h2>Meus projetos</h2>
 
         <div class="container-projetos">
           <div class="card">
-            <h3>Nome do projeto</h3>
+            <h3>Quizz-game em Python</h3>
             <p>Um quiz-game feito em python</p>
             <a href="https://github.com/S0vina/quizz-game.git" target="_blank"
               >Ver no github</a
@@ -31,7 +108,7 @@
           </div>
 
           <div class="card">
-            <h3>Nome do projeto</h3>
+            <h3>Projeto: Rover</h3>
             <p>Revitalizacao de um Rover para uso didatico</p>
             <a href="https://github.com/Rover-Project/Rover.git" target="_blank"
               >Ver no github</a
@@ -39,10 +116,40 @@
           </div>
         </div>
       </section>
+
+      <section id="contato">
+        <h2>Meus Contatos</h2>
+        <div class="container-contact">
+          <a
+            href="https://www.linkedin.com/in/hillan-sousa/"
+            target="_blank"
+            class="contato-link"
+          >
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+          <a
+            href="https://github.com/S0vina"
+            target="_blank"
+            class="contato-link"
+          >
+            <img src="assets/icons/github.svg" alt="GitHub" />
+          </a>
+          <a href="mailto:hillan1236@gmail.com" class="contato-link">
+            <img src="assets/icons/gmail.svg" alt="Email" />
+          </a>
+          <a
+            href="https://www.instagram.com/h_illans/"
+            target="_blank"
+            class="contato-link"
+          >
+            <img src="assets/icons/instagram.svg" alt="instagram" />
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer>
-      <p>Contato: hillan.sousa1@gmail.com</p>
+      <p>Todos direitos reservados a Hillanzinho</p>
     </footer>
   </body>
 </html>
